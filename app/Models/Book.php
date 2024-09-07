@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Book extends Model
 {
@@ -14,8 +14,8 @@ class Book extends Model
         'title',
     ];
 
-    public function books(): HasOne
+    public function author(): BelongsTo
     {
-        return $this->hasOne(Author::class);
+        return $this->belongsTo(Author::class);
     }
 }
